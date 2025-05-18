@@ -1,0 +1,2 @@
+D:/bernie_wallet_core_services/home/ubuntu/bernie_wallet/android/app/.cxx/RelWithDebInfo/5j696z2b/arm64-v8a/CMakeFiles/edit_cache.dir
+D:/bernie_wallet_core_services/home/ubuntu/bernie_wallet/android/app/.cxx/RelWithDebInfo/5j696z2b/arm64-v8a/CMakeFiles/rebuild_cache.dir

@@ -1,0 +1,103 @@
+---
+description: 
+globs: 
+alwaysApply: false
+---
+Cursor Rules for BernieWallet Project
+=====================================
+
+Code Generation Rules
+---------------------
+
+1.  **Complete File Generation**
+    -   Generate each file in its entirety with full implementations
+    -   No placeholder code or TODOs
+    -   Each file must be compilable and functional on its own
+2.  **Proper Imports**
+    -   Include all necessary imports at the top of each file
+    -   Group imports logically (Flutter core, project files, third-party packages)
+    -   Remove any unused imports
+3.  **Architecture Adherence**
+    -   Strictly follow BLoC pattern for state management
+    -   Maintain clean separation between UI, business logic, and data layers
+    -   Enforce unidirectional data flow (UI → Events → BLoC → State → UI)
+4.  **Crypto Security Standards**
+    -   Implement proper mnemonic generation using bip39 with 256-bit entropy
+    -   Never expose mnemonics in logs or non-secure storage
+    -   Validate cryptographic operations thoroughly
+5.  **Error Handling**
+    -   Implement proper try/catch blocks for all async operations
+    -   Provide meaningful error messages to users
+    -   Log errors appropriately (without exposing sensitive data)
+    -   Handle edge cases like network failures gracefully
+
+API Implementation Rules
+------------------------
+
+1.  **Network Configuration**
+    -   Implement proper switching between Mainnet and Testnet
+    -   Use these API endpoints:
+        -   Mainnet: `https://mainnet-api.algonode.cloud` and `https://mainnet-idx.algonode.cloud`
+        -   Testnet: `https://testnet-api.algonode.cloud` and `https://testnet-idx.algonode.cloud`
+2.  **API Interaction**
+    -   Implement proper rate limiting and request throttling
+    -   Handle API response errors with specific error messages
+    -   Cache appropriate responses to minimize API calls
+
+UI Implementation Rules
+-----------------------
+
+1.  **Screen Flow**
+    -   Implement a logical flow: Welcome → Create/Import Wallet → Home/Dashboard
+    -   Ensure navigation is intuitive and handles backstack properly
+    -   Add proper loading states between transitions
+2.  **Widget Structure**
+    -   Create reusable components for repetitive UI elements
+    -   Implement responsive layouts that work across device sizes
+    -   Follow Material Design principles for consistent user experience
+3.  **User Feedback**
+    -   Show loading indicators for all async operations
+    -   Display appropriate success/error messages
+    -   Add animations for better user feedback
+
+Testing & Quality Rules
+-----------------------
+
+1.  **Code Robustness**
+    -   Implement null safety throughout the codebase
+    -   Add input validation for all user inputs
+    -   Handle edge cases (empty states, error states, etc.)
+2.  **Performance Optimization**
+    -   Minimize widget rebuilds
+    -   Optimize state management to prevent unnecessary updates
+    -   Use const constructors where appropriate
+3.  **Security Practices**
+    -   Never log sensitive information
+    -   Implement secure PIN entry system
+    -   Clear sensitive data from memory when not needed
+
+Documentation Rules
+-------------------
+
+1.  **Code Comments**
+    -   Add explanatory comments for complex logic
+    -   Document method parameters and return values
+    -   Add educational comments explaining cryptographic operations
+2.  **Architecture Documentation**
+    -   Document the flow of data through the application
+    -   Explain BLoC implementation decisions
+    -   Provide clear explanations of wallet operations
+
+Feature Implementation Order
+----------------------------
+
+When implementing the project, follow this priority order:
+
+1.  Core infrastructure (app.dart, main.dart, configuration)
+2.  Models and repository layer
+3.  BLoC implementation
+4.  Basic screens (welcome, create/import wallet)
+5.  Home screen and wallet functionality
+6.  Transaction history
+
+7.  Settings and advanced features
